@@ -23,9 +23,9 @@ public class Main
 		System.out.println("Enter String");
 		str=s.nextLine();
 		String pd="";
-	    for(int i=0;i<str.length()-1;i++)
+	    for(int i=0;i<str.length();i++)
 	    {
-	        for(int j=i+1;j<str.length();j++)
+	        for(int j=i+1;j<=str.length();j++)
 	        {
 	            String k=str.substring(i,j);
 	            if(palindrome(k)==1 && (k.length()>pd.length()))
