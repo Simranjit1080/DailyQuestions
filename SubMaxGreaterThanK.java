@@ -14,18 +14,23 @@ public class Main
 		System.out.println("Enter the integer");
 		int k=s.nextInt();
 		int count=0;
+		int max;
 		for(int x=0;x<n;x++)
 		{
 		    for(int y=0;y<n;y++)
 		    {
-		        int c=0;
+		        max=a[x];
+		        int f=0;
 		        for(int z=x;z<=y;z++)
 		        {
-		            if(a[z]>k)
-		            c++;
+		            f=1;
+		            if(a[z]>max)
+		                max=a[z];
 		        }
-		        count=count+c;
+		        if(max>k && f==1)
+		        count++;
 		    }
+		    
 		}
 		System.out.println("count="+count);
 	}
