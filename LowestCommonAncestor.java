@@ -17,15 +17,19 @@ public class Main
         {
             return null;
         }
-        if (n.data>a && n.data>b)
+        if (n.data==a || n.data==b)
         {
-            return ancestor(n.left,a, b); 
+            return n; 
         }
-        if (n.data<a && n.data<b)  
-        {
-            return ancestor(n.right,a , b); 
-        }
-        return n; 
+        Node l=ancestor(n.left,a,b);
+        Node r=ancestor(n.right,a,b);
+        if(l!=null&&r!=null)
+        return n;
+        if(l!=null)
+        return l;
+        if(r!=null)
+        return r;
+        return n;
     } 
     public static void main(String args[])  
     { 
